@@ -5,20 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>하노이의 밤</title>
+    <style>
+        div{width: 250px; height: 500px; padding: 10px; margin: 15px; float: left; text-align: center;}
+        #div1 {border : 1px solid red;}
+        #div2 {border : 1px solid green;}
+        #div3 {border : 1px solid blue;}
+        #focus {border: 1px soild yellow;}
+        p{height : 8px;}
+    </style>
 </head>
 <body>
-    <h3>하노이의 밤</h3>
-    <button>버튼</button>
-    <div float:right>
-    <p style="width: 300px; height: 500px; border: 2px solid red; float: left;"> 
-        <span style="color: red;"> ■■■■■■■■■■■■■</span> <br>
-        <span style="color: green;"> ■■■■■■■■■■■</span> <br>
-        <span style="color: yellow;"> ■■■■■■■■■</span> <br>
-        <span style="color: blue;"> ■■■■■■■</span> <br>
-        <span style="color: black;"> ■■■■■</span> <br>
-     </p>
-    <p style="width: 300px; height: 500px; margin: 20px; border: 2px solid green; float: left;"></p>
-    <p style="width: 300px; height: 500px; margin: 20px; border: 2px solid yellow; float: left;"></p>
-</div>
+    <h4>하노이의 탑</h4>
+    <button id="btn4" style="display: block;">초기화</button>
+    <div id = "div1">
+        <button id = "btn1"> 선택 </button>
+        <p id = "p1"> </p>
+        </div>
+    <div id = "div2">
+            <button id = "btn2">선택</button>
+            <p id = "p2"></p>
+        </div>
+    <div id = "div3">
+            <button id = "btn3">선택</button>
+            <p id = "p3"></p>
+        </div>
+        <script>
+            var p1 = document.getElementById("p1");
+            var p2 = document.getElementById("p2");
+            var p3 = document.getElementById("p3");
+            var div1 = document.getElementById("div1");
+            var div2 = document.getElementById("div2");
+            var div3 = document.getElementById("div3");
+            var divc1, divc2, divc3, diva1, diva2, diva3;
+            var btn1 = document.getElementById("btn1");
+            btn1.addEventListener('click', focus1)
+            var btn2 = document.getElementById("btn2");
+            btn2.addEventListener('click', focus2)
+            var btn3 = document.getElementById("btn3");
+            btn3.addEventListener('click', focus3)
+            var btn4 = document.getElementById("btn4");
+            btn4.addEventListener('click', Re)
+            var focused = 0;
+
+            function Re()
+            {
+                focused = 0;
+                diva1 = new Array();
+                diva2 = new Array();
+                diva3 = new Array();
+                diva1.push("■■■■■■■■■")
+                diva1.push("■■■■■■■")
+                diva1.push("■■■■■")
+                diva1.push("■■■")
+                diva1.push("■")
+                update();
+            }
+        </script>
 </body>
 </html>
